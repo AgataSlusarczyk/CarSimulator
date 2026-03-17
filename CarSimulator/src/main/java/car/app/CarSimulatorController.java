@@ -88,7 +88,6 @@ public class CarSimulatorController implements Listener {
         engineWeightLabel.setText(String.valueOf(engineWeight));
         currentRpmLabel.setText(String.valueOf(newCar.getCurrentRpm()));
         maxRpmLabel.setText(String.valueOf(newCar.getMaxRpm()));
-        engineStateLabel.setText(getEngineStateText());
         selectCarComboBox.getSelectionModel().select(newCar);
         carWeightLabel.setText(String.valueOf(newCar.getTotalWeight()));
     }
@@ -213,7 +212,6 @@ public class CarSimulatorController implements Listener {
         engineWeightLabel.setText(String.valueOf(car.getEngine().getWeight()));
         currentRpmLabel.setText(String.valueOf(car.getCurrentRpm()));
         maxRpmLabel.setText(String.valueOf(car.getMaxRpm()));
-        engineStateLabel.setText(getEngineStateText());
         Platform.runLater(() -> {
             carImageView.setTranslateX(car.getPosX());
             carImageView.setTranslateY(car.getPosY());
@@ -230,7 +228,6 @@ public class CarSimulatorController implements Listener {
         }
         if (car.getGearBox().getClutch().isPressed()) {
             car.startEngine();
-            engineStateLabel.setText("Running");
             this.refresh();
         }
     }
