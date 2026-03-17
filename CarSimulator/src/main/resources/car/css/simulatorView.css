@@ -1,0 +1,59 @@
+.panel{
+    -fx-background-color: #171616;
+    -fx-border-color: #b5b5b5;
+    -fx-border-width: 1;
+    -fx-border-radius: 1;
+}
+
+.section-name{
+    -fx-font-family: Segoe UI;
+    -fx-font-size: 21.0;
+    -fx-text-fill: #eb2502;
+    -fx-pref-height: 30.0;
+}
+
+.label-header {
+    -fx-font-family: Segoe UI;
+    -fx-font-size: 20.0;
+    -fx-text-fill: #b5b5b5;
+    -fx-pref-height: 30;
+}
+
+.label-value{
+    -fx-font-family: Segoe UI;
+    -fx-font-size: 20.0;
+    -fx-text-fill: #ffffff;
+    -fx-pref-height: 30;
+}
+
+
+.buttonOne {
+    -fx-background-color: #ff2d00;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 20;
+    -fx-cursor: hand;
+    -fx-letter-spacing: 1;
+    -fx-pref-height: 45;
+    -fx-pref-width: 135;
+
+    -fx-background-radius: 15;
+    -fx-border-color: transparent;
+    -fx-border-width: 1;
+    -fx-border-radius: 15;
+}
+
+.buttonTwo {
+    -fx-background-color: #171616;
+    -fx-text-fill: #ff2d00;
+    -fx-font-weight: bold;
+    -fx-font-size: 20;
+    -fx-cursor: hand;
+    -fx-letter-spacing: 1;
+    -fx-pref-height: 45;
+    -fx-pref-width: 135;
+    -fx-border-color: #ff2d00;
+    -fx-border-width: 1;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+}
