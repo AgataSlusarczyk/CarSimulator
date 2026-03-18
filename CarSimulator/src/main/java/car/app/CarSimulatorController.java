@@ -17,6 +17,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -25,50 +26,90 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class CarSimulatorController implements Listener {
-    @FXML public Label brandLabel;
-    @FXML public Label modelLabel;
-    @FXML public Label licensePlateLabel;
-    @FXML public Label positionXLabel;
-    @FXML public Label positionYLabel;
-    @FXML public Button addCarButton;
-    @FXML public Button removeCarButton;
+    @FXML
+    public Label brandLabel;
+    @FXML
+    public Label modelLabel;
+    @FXML
+    public Label licensePlateLabel;
+    @FXML
+    public Label positionXLabel;
+    @FXML
+    public Label positionYLabel;
+    @FXML
+    public Button addCarButton;
+    @FXML
+    public Button removeCarButton;
 
-    @FXML public ToggleGroup carStateGroup;
-    @FXML public ToggleButton startCarButton;
-    @FXML public ToggleButton stopCarButton;
+    @FXML
+    public ToggleGroup carStateGroup;
+    @FXML
+    public ToggleButton startCarButton;
+    @FXML
+    public ToggleButton stopCarButton;
 
-    @FXML public Button shiftDownButton;
-    @FXML public Button shiftUpButton;
-    @FXML public Label currentGearLabel;
-    @FXML public Label gearBoxNameLabel;
-    @FXML public Label gearBoxPriceLabel;
-    @FXML public Label gearBoxWeightLabel;
-    @FXML public Label gearCountLabel;
+    @FXML
+    public Button shiftDownButton;
+    @FXML
+    public Button shiftUpButton;
+    @FXML
+    public Label currentGearLabel;
+    @FXML
+    public Label gearBoxNameLabel;
+    @FXML
+    public Label gearBoxPriceLabel;
+    @FXML
+    public Label gearBoxWeightLabel;
+    @FXML
+    public Label gearCountLabel;
 
-    @FXML public ToggleGroup clutchStateGroup;
-    @FXML public ToggleButton releaseClutchButton;
-    @FXML public ToggleButton pressClutchButton;
-    @FXML public Label clutchNameLabel;
-    @FXML public Label clutchWeightLabel;
-    @FXML public Label clutchPriceLabel;
+    @FXML
+    public ToggleGroup clutchStateGroup;
+    @FXML
+    public ToggleButton releaseClutchButton;
+    @FXML
+    public ToggleButton pressClutchButton;
+    @FXML
+    public Label clutchNameLabel;
+    @FXML
+    public Label clutchWeightLabel;
+    @FXML
+    public Label clutchPriceLabel;
 
-    @FXML public Button increaseRpmButton;
-    @FXML public Button decreaseRpmButton;
-    @FXML public Label currentRpmLabel;
-    @FXML public Label maxRpmLabel;
-    @FXML public Label engineStateLabel;
-    @FXML public Label engineNameLabel;
-    @FXML public Label enginePriceLabel;
-    @FXML public Label engineWeightLabel;
+    @FXML
+    public Button increaseRpmButton;
+    @FXML
+    public Button decreaseRpmButton;
+    @FXML
+    public Label currentRpmLabel;
+    @FXML
+    public Label maxRpmLabel;
+    @FXML
+    public Label engineStateLabel;
+    @FXML
+    public Label engineNameLabel;
+    @FXML
+    public Label enginePriceLabel;
+    @FXML
+    public Label engineWeightLabel;
 
-    @FXML public ImageView carImageView;
-    @FXML public Pane map;
-    @FXML public Label carWeightLabel;
+    @FXML
+    public ImageView carImageView;
+    @FXML
+    public Pane map;
+    @FXML
+    public Label carWeightLabel;
+    @FXML
+    public HBox topBar;
 
-    @FXML private ComboBox<Car> selectCarComboBox;
+    @FXML
+    private ComboBox<Car> selectCarComboBox;
     private ObservableList<Car> cars = FXCollections.observableArrayList();
 
     static Car car;
+
+    private double xOffset = 0;
+    private double yOffset = 0;
 
     public void addCarToList(String clutchName, int clutchWeight, int clutchPrice, int gearCount, int gearBoxPrice, int gearBoxWeight, String gearBoxName, int maxRpm, String engineName, int engineWeight, int enginePrice, String licensePlate, String model, String brand, int weight, int x, int y, int maxSpeed) {
         var newCar = createCar(clutchName, clutchWeight, clutchPrice, gearCount, gearBoxPrice, gearBoxWeight, gearBoxName, maxRpm, engineName, engineWeight, enginePrice, licensePlate, model, brand, weight, x, y, maxSpeed);
@@ -128,7 +169,7 @@ public class CarSimulatorController implements Listener {
                 }
             }
         });
-        map.setStyle("-fx-background-color: #c8dfc8;");
+        map.setStyle("-fx-background-color: #171616;");
 
         selectCarComboBox.setOnAction(event -> {
             car = selectCarComboBox.getSelectionModel().getSelectedItem();
@@ -179,6 +220,16 @@ public class CarSimulatorController implements Listener {
             increaseRpmButton.setDisable(true);
             decreaseRpmButton.setDisable(true);
         }
+        topBar.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+
+        topBar.setOnMouseDragged(event -> {
+            Stage stage = (Stage) topBar.getScene().getWindow();
+            stage.setX(event.getScreenX() - xOffset);
+            stage.setY(event.getScreenY() - yOffset);
+        });
     }
 
     public void openAddCarWindow() throws IOException {
@@ -359,11 +410,36 @@ public class CarSimulatorController implements Listener {
                 engineWeightLabel.setText(null);
                 currentRpmLabel.setText(null);
                 maxRpmLabel.setText(null);
-                engineStateLabel.setText(null);
+
             }
         }
     }
 
     @Override
-    public void update() {}
+    public void update() {
+    }
+
+    @FXML
+    private void minimizeApp() {
+        Stage stage = (Stage) map.getScene().getWindow();
+        stage.setIconified(true);
+    }
+
+    @FXML
+    private void closeApp() {
+        Stage stage = (Stage) map.getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    private void maximizeApp() {
+        Stage stage = (Stage) map.getScene().getWindow();
+        if (stage.isMaximized()) {
+            stage.setMaximized(false);
+        } else {
+            stage.setMaximized(true);
+        }
+    }
+
+
 }

@@ -1,32 +1,74 @@
-.panel{
+.root {
     -fx-background-color: #171616;
+}
+
+/* LEFT PANEL */
+.left-panel {
+    -fx-border-color: #ff2d00;
+    -fx-border-width: 0 2 0 0;
+}
+
+/* PANELS */
+.panel {
+    -fx-background-color: #201f1f;
     -fx-border-color: #b5b5b5;
     -fx-border-width: 1;
-    -fx-border-radius: 1;
+    -fx-border-radius: 3;
     -fx-padding: 6 8 6 8;
 }
 
-.section-name{
+/* TOP BAR */
+.top-bar {
+    -fx-background-color: #111111;
+    -fx-padding: 8 12;
+    -fx-border-color: #ff2d00;
+    -fx-border-width: 0 0 2 0;
+}
+
+.app-title {
+    -fx-text-fill: #ff2d00;
+    -fx-font-weight: bold;
+    -fx-font-size: 12;
+}
+
+.top-label {
+    -fx-text-fill: #888;
+    -fx-font-size: 12;
+}
+
+.divider {
+    -fx-background-color: #333;
+    -fx-pref-width: 1;
+    -fx-pref-height: 20;
+}
+
+/* TEXT */
+.section-name {
     -fx-font-family: Segoe UI;
-    -fx-font-size: 13.0;
+    -fx-font-size: 13;
     -fx-text-fill: #eb2502;
-    -fx-pref-height: 22.0;
 }
 
 .label-header {
     -fx-font-family: Segoe UI;
-    -fx-font-size: 10.0;
+    -fx-font-size: 10;
     -fx-text-fill: #b5b5b5;
-    -fx-pref-height: 18;
 }
 
-.label-value{
+.label-value {
     -fx-font-family: Segoe UI;
-    -fx-font-size: 11.0;
+    -fx-font-size: 11;
     -fx-text-fill: #ffffff;
-    -fx-pref-height: 18;
 }
 
+/* RPM SMALL LABEL */
+.rpm-label {
+    -fx-font-size: 10;
+    -fx-text-fill: #444;
+    -fx-letter-spacing: 2;
+}
+
+/* BUTTONS */
 .buttonOne {
     -fx-background-color: #ff2d00;
     -fx-text-fill: white;
@@ -36,9 +78,6 @@
     -fx-pref-height: 32;
     -fx-pref-width: 185;
     -fx-background-radius: 10;
-    -fx-border-color: transparent;
-    -fx-border-width: 1;
-    -fx-border-radius: 10;
 }
 
 .buttonTwo {
@@ -55,9 +94,43 @@
     -fx-background-radius: 10;
 }
 
-.parameters{
+.button-menu {
+    -fx-background-color: transparent;
+    -fx-text-fill: #888;
+    -fx-font-size: 14;
+    -fx-cursor: hand;
+}
+
+/* PARAMETERS */
+.parameters {
     -fx-font-size: 24;
     -fx-font-weight: bold;
     -fx-text-fill: #ff2d00;
-    -fx-font-family: 'Consolas';
+    -fx-font-family: Consolas;
+}
+
+/* HBOX CONTROL SPACING */
+.controls-box {
+    -fx-padding: 10 0 0 0;
+}
+
+/* COMBOBOX */
+#selectCarComboBox {
+    -fx-background-color: #171616;
+}
+
+#selectCarComboBox .list-view {
+    -fx-background-color: #171616;
+    -fx-border-color: #555;
+}
+
+#selectCarComboBox .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+}
+
+/* POSITION BOX */
+.position-box {
+    -fx-pref-height: 60;
+    -fx-pref-width: 60;
 }
