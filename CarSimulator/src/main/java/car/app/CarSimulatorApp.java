@@ -3,6 +3,7 @@ package car.app;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -16,6 +17,12 @@ public class CarSimulatorApp extends Application {
         stage.setTitle("Car Simulator");
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
+
+        scene.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ESCAPE) {
+                stage.setMaximized(false);
+            }
+        });
         stage.show();
     }
 

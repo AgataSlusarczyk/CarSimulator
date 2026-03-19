@@ -1,0 +1,111 @@
+.root {
+    -fx-background-color: #171616;
+}
+
+.tab-pane {
+    -fx-background-color: transparent;
+}
+
+.tab-pane .tab-header-area {
+    -fx-background-color: #111111;
+}
+
+.tab {
+    -fx-background-color: #201f1f;
+    -fx-text-base-color: #888;
+    -fx-padding: 6 12;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.tab:selected {
+    -fx-background-color: #ff2d00;
+    -fx-text-base-color: white;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.tab-label {
+    -fx-font-size: 12;
+    -fx-font-weight: bold;
+}
+
+
+.anchor-pane, .vbox {
+    -fx-background-color: transparent;
+}
+
+.label {
+    -fx-text-fill: #b5b5b5;
+    -fx-font-size: 12;
+}
+
+.section-label {
+    -fx-text-fill: #ff2d00;
+    -fx-font-size: 13;
+    -fx-font-weight: bold;
+}
+
+.text-field {
+    -fx-background-color: #201f1f;
+    -fx-text-fill: white;
+    -fx-border-color: #555;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6 8;
+}
+
+.text-field:focused {
+    -fx-border-color: #ff2d00;
+}
+
+.combo-box {
+    -fx-background-color: #201f1f;
+    -fx-border-color: #555;
+    -fx-border-radius: 6;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #171616;
+    -fx-border-color: #555;
+}
+
+.radio-button {
+    -fx-text-fill: #b5b5b5;
+}
+
+.radio-button:selected .radio {
+    -fx-background-color: #ff2d00;
+}
+
+.button-confirm {
+    -fx-background-color: #ff2d00;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-pref-width: 150;
+    -fx-pref-height: 35;
+    -fx-cursor: hand;
+}
+
+.button-cancel {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ff2d00;
+    -fx-border-color: #ff2d00;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-pref-width: 150;
+    -fx-pref-height: 35;
+    -fx-cursor: hand;
+}
+
+.bottom-bar {
+    -fx-background-color: #111111;
+    -fx-border-color: #ff2d00;
+    -fx-border-width: 2 0 0 0;
+}

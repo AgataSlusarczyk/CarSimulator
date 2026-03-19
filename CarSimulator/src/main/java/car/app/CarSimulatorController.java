@@ -20,6 +20,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Callback;
 
 import java.io.IOException;
@@ -210,16 +211,7 @@ public class CarSimulatorController implements Listener {
         if (car != null) {
             car.start();
         }
-        if (car == null) {
-            stopCarButton.setDisable(true);
-            startCarButton.setDisable(true);
-            shiftUpButton.setDisable(true);
-            shiftDownButton.setDisable(true);
-            pressClutchButton.setDisable(true);
-            releaseClutchButton.setDisable(true);
-            increaseRpmButton.setDisable(true);
-            decreaseRpmButton.setDisable(true);
-        }
+        setButtonsDisable();
         topBar.setOnMousePressed(event -> {
             xOffset = event.getSceneX();
             yOffset = event.getSceneY();
@@ -230,6 +222,7 @@ public class CarSimulatorController implements Listener {
             stage.setX(event.getScreenX() - xOffset);
             stage.setY(event.getScreenY() - yOffset);
         });
+
     }
 
     public void openAddCarWindow() throws IOException {
@@ -237,6 +230,8 @@ public class CarSimulatorController implements Listener {
         Stage stage = new Stage();
         stage.setScene(new Scene(loader.load()));
         stage.setTitle("Add new car");
+        stage.initStyle(StageStyle.UNDECORATED);
+
         stage.show();
         AddCarController addCarController = loader.getController();
         addCarController.setParentController(this);
@@ -411,7 +406,22 @@ public class CarSimulatorController implements Listener {
                 currentRpmLabel.setText(null);
                 maxRpmLabel.setText(null);
 
+                setButtonsDisable();
+
             }
+        }
+    }
+
+    private void setButtonsDisable() {
+        if (car == null) {
+            stopCarButton.setDisable(true);
+            startCarButton.setDisable(true);
+            shiftUpButton.setDisable(true);
+            shiftDownButton.setDisable(true);
+            pressClutchButton.setDisable(true);
+            releaseClutchButton.setDisable(true);
+            increaseRpmButton.setDisable(true);
+            decreaseRpmButton.setDisable(true);
         }
     }
 

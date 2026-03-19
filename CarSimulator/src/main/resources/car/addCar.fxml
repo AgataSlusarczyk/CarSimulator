@@ -2,160 +2,124 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0"
-            prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="car.app.AddCarController">
+<BorderPane prefHeight="500.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="car.app.AddCarController"
+            stylesheets="@css/addCar.css"
+            styleClass="root">
+
     <bottom>
-        <Pane prefHeight="60.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-            <Button fx:id="confirmButton" layoutX="53.0" layoutY="18.0" mnemonicParsing="false"
-                    onAction="#onConfirmButton" text="Confirm"/>
-            <Button fx:id="cancelButton" layoutX="359.0" layoutY="18.0" mnemonicParsing="false"
-                    onAction="#onCancelButton" text="Cancel"/>
-        </Pane>
+        <HBox prefHeight="60.0" alignment="CENTER" spacing="40" styleClass="bottom-bar">
+
+            <Button fx:id="confirmButton" onAction="#onConfirmButton" text="CONFIRM" styleClass="button-confirm"/>
+            <Button fx:id="cancelButton" onAction="#onCancelButton" text="CANCEL" styleClass="button-cancel"/>
+        </HBox>
     </bottom>
     <center>
-        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <TabPane tabClosingPolicy="UNAVAILABLE">
             <Tab text="Car">
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                    <Label layoutX="20.0" layoutY="25.0" text="Brand">
-                        <font><Font size="14.0"/></font>
-                    </Label>
-                    <TextField fx:id="brandTextField" layoutX="170.0" layoutY="20.0">
-                        <font><Font size="14.0"/></font>
-                    </TextField>
-                    <Label layoutX="20.0" layoutY="70.0" text="Model">
-                        <font><Font size="14.0"/></font>
-                    </Label>
-                    <TextField fx:id="modelTextField" layoutX="170.0" layoutY="65.0">
-                        <font><Font size="14.0"/></font>
-                    </TextField>
-                    <Label layoutX="19.0" layoutY="115.0" text="License Plate">
-                        <font><Font size="14.0"/></font>
-                    </Label>
-                    <TextField fx:id="licensePlateTextField" layoutX="170.0" layoutY="110.0">
-                        <font><Font size="14.0"/></font>
-                    </TextField>
-                    <Label layoutX="20.0" layoutY="160.0" text="Max Speed">
-                        <font><Font size="14.0"/></font>
-                    </Label>
-                    <TextField fx:id="maxSpeedTextField" layoutX="170.0" layoutY="155.0">
-                        <font><Font size="14.0"/></font>
-                    </TextField>
-                    <Label layoutX="22.0" layoutY="207.0" text="Weight">
-                        <font><Font size="14.0"/></font>
-                    </Label>
-                    <TextField fx:id="weightTextField" layoutX="170.0" layoutY="202.0">
-                        <font><Font size="14.0"/></font>
-                    </TextField>
+                <AnchorPane>
+                    <Label layoutX="20.0" layoutY="25.0" text="Brand"/>
+                    <TextField fx:id="brandTextField" layoutX="170.0" layoutY="20.0"/>
+
+                    <Label layoutX="20.0" layoutY="70.0" text="Model"/>
+                    <TextField fx:id="modelTextField" layoutX="170.0" layoutY="65.0"/>
+
+                    <Label layoutX="19.0" layoutY="115.0" text="License Plate"/>
+                    <TextField fx:id="licensePlateTextField" layoutX="170.0" layoutY="110.0"/>
+
+                    <Label layoutX="20.0" layoutY="160.0" text="Max Speed"/>
+                    <TextField fx:id="maxSpeedTextField" layoutX="170.0" layoutY="155.0"/>
+
+                    <Label layoutX="22.0" layoutY="207.0" text="Weight"/>
+                    <TextField fx:id="weightTextField" layoutX="170.0" layoutY="202.0"/>
                 </AnchorPane>
             </Tab>
+
             <Tab text="Gear Box">
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <AnchorPane>
                     <VBox layoutX="20.0" layoutY="20.0" spacing="10">
-                        <RadioButton fx:id="customGearBoxRadio" selected="true" text="Custom gear box"/>
-                        <RadioButton fx:id="predefGearBoxRadio" text="Choose from list"/>
+
+                        <HBox spacing="20">
+                            <RadioButton fx:id="customGearBoxRadio" selected="true" text="Custom gear box"/>
+                            <RadioButton fx:id="predefGearBoxRadio" text="From list"/>
+                        </HBox>
 
                         <VBox fx:id="gearBoxInputGroup" spacing="10">
-                            <Label text="Name">
-                                <font><Font size="14.0"/></font>
-                            </Label>
-                            <TextField fx:id="gearBoxNameTextField">
-                                <font><Font size="14.0"/></font>
-                            </TextField>
-                            <Label text="Price">
-                                <font><Font size="14.0"/></font>
-                            </Label>
-                            <TextField fx:id="gearBoxPriceTextField">
-                                <font><Font size="14.0"/></font>
-                            </TextField>
-                            <Label text="Weight">
-                                <font><Font size="14.0"/></font>
-                            </Label>
-                            <TextField fx:id="gearBoxWeightTextField">
-                                <font><Font size="14.0"/></font>
-                            </TextField>
-                            <Label text="Gear Count">
-                                <font><Font size="14.0"/></font>
-                            </Label>
-                            <TextField fx:id="gearCountTextField">
-                                <font><Font size="14.0"/></font>
-                            </TextField>
+                            <Label text="Name"/>
+                            <TextField fx:id="gearBoxNameTextField"/>
+
+                            <Label text="Price"/>
+                            <TextField fx:id="gearBoxPriceTextField"/>
+
+                            <Label text="Weight"/>
+                            <TextField fx:id="gearBoxWeightTextField"/>
+
+                            <Label text="Gear Count"/>
+                            <TextField fx:id="gearCountTextField"/>
                         </VBox>
 
                         <ComboBox fx:id="selectGearBoxComboBox" disable="true" prefWidth="200.0"/>
                     </VBox>
                 </AnchorPane>
             </Tab>
+
             <Tab text="Clutch">
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <AnchorPane>
                     <VBox layoutX="20.0" layoutY="20.0" spacing="10">
-                        <RadioButton fx:id="customClutchRadio" selected="true" text="Custom clutch"/>
-                        <RadioButton fx:id="predefClutchRadio" text="Choose from list"/>
+
+                        <HBox spacing="20">
+                            <RadioButton fx:id="customClutchRadio" selected="true" text="Custom clutch"/>
+                            <RadioButton fx:id="predefClutchRadio" text="From list"/>
+                        </HBox>
 
                         <VBox fx:id="clutchInputGroup" spacing="10">
-                            <Label text="Name">
-                                <font><Font size="14.0"/></font>
-                            </Label>
-                            <TextField fx:id="clutchNameTextField">
-                                <font><Font size="14.0"/></font>
-                            </TextField>
-                            <Label text="Price">
-                                <font><Font size="14.0"/></font>
-                            </Label>
-                            <TextField fx:id="clutchPriceTextField">
-                                <font><Font size="14.0"/></font>
-                            </TextField>
-                            <Label text="Weight">
-                                <font><Font size="14.0"/></font>
-                            </Label>
-                            <TextField fx:id="clutchWeightTextField">
-                                <font><Font size="14.0"/></font>
-                            </TextField>
+                            <Label text="Name"/>
+                            <TextField fx:id="clutchNameTextField"/>
+
+                            <Label text="Price"/>
+                            <TextField fx:id="clutchPriceTextField"/>
+
+                            <Label text="Weight"/>
+                            <TextField fx:id="clutchWeightTextField"/>
                         </VBox>
 
                         <ComboBox fx:id="selectClutchComboBox" disable="true" prefWidth="200.0"/>
                     </VBox>
                 </AnchorPane>
             </Tab>
+
             <Tab text="Engine">
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <AnchorPane>
                     <VBox layoutX="20.0" layoutY="20.0" spacing="10">
-                        <RadioButton fx:id="customEngineRadio" selected="true" text="Custom engine"/>
-                        <RadioButton fx:id="predefEngineRadio" text="Choose from list"/>
+
+                        <HBox spacing="20">
+                            <RadioButton fx:id="customEngineRadio" selected="true" text="Custom engine"/>
+                            <RadioButton fx:id="predefEngineRadio" text="From list"/>
+                        </HBox>
 
                         <VBox fx:id="engineInputGroup" spacing="10">
-                            <Label text="Name">
-                                <font><Font size="14.0"/></font>
-                            </Label>
-                            <TextField fx:id="engineNameTextField">
-                                <font><Font size="14.0"/></font>
-                            </TextField>
-                            <Label text="Price">
-                                <font><Font size="14.0"/></font>
-                            </Label>
-                            <TextField fx:id="enginePriceTextField">
-                                <font><Font size="14.0"/></font>
-                            </TextField>
-                            <Label text="Weight">
-                                <font><Font size="14.0"/></font>
-                            </Label>
-                            <TextField fx:id="engineWeightTextField">
-                                <font><Font size="14.0"/></font>
-                            </TextField>
-                            <Label text="Max RPM">
-                                <font><Font size="14.0"/></font>
-                            </Label>
-                            <TextField fx:id="maxRpmTextField">
-                                <font><Font size="14.0"/></font>
-                            </TextField>
+                            <Label text="Name"/>
+                            <TextField fx:id="engineNameTextField"/>
+
+                            <Label text="Price"/>
+                            <TextField fx:id="enginePriceTextField"/>
+
+                            <Label text="Weight"/>
+                            <TextField fx:id="engineWeightTextField"/>
+
+                            <Label text="Max RPM"/>
+                            <TextField fx:id="maxRpmTextField"/>
                         </VBox>
 
                         <ComboBox fx:id="selectEngineComboBox" disable="true" prefWidth="200.0"/>
                     </VBox>
                 </AnchorPane>
             </Tab>
+
         </TabPane>
     </center>
+
 </BorderPane>

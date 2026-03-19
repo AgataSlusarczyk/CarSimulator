@@ -2,13 +2,12 @@
     -fx-background-color: #171616;
 }
 
-/* LEFT PANEL */
+
 .left-panel {
     -fx-border-color: #ff2d00;
     -fx-border-width: 0 2 0 0;
 }
 
-/* PANELS */
 .panel {
     -fx-background-color: #201f1f;
     -fx-border-color: #b5b5b5;
@@ -17,7 +16,7 @@
     -fx-padding: 6 8 6 8;
 }
 
-/* TOP BAR */
+
 .top-bar {
     -fx-background-color: #111111;
     -fx-padding: 8 12;
@@ -42,7 +41,7 @@
     -fx-pref-height: 20;
 }
 
-/* TEXT */
+
 .section-name {
     -fx-font-family: Segoe UI;
     -fx-font-size: 13;
@@ -61,14 +60,12 @@
     -fx-text-fill: #ffffff;
 }
 
-/* RPM SMALL LABEL */
 .rpm-label {
     -fx-font-size: 10;
     -fx-text-fill: #444;
     -fx-letter-spacing: 2;
 }
 
-/* BUTTONS */
 .buttonOne {
     -fx-background-color: #ff2d00;
     -fx-text-fill: white;
@@ -101,20 +98,19 @@
     -fx-cursor: hand;
 }
 
-/* PARAMETERS */
+
 .parameters {
-    -fx-font-size: 24;
+    -fx-font-size: 34;
     -fx-font-weight: bold;
     -fx-text-fill: #ff2d00;
     -fx-font-family: Consolas;
 }
 
-/* HBOX CONTROL SPACING */
 .controls-box {
     -fx-padding: 10 0 0 0;
 }
 
-/* COMBOBOX */
+
 #selectCarComboBox {
     -fx-background-color: #171616;
 }
@@ -129,7 +125,7 @@
     -fx-background-color: transparent;
 }
 
-/* POSITION BOX */
+
 .position-box {
     -fx-pref-height: 60;
     -fx-pref-width: 60;
