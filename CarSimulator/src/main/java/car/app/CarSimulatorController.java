@@ -208,6 +208,7 @@ public class CarSimulatorController implements Listener {
             }
         });
 
+
         if (car != null) {
             car.start();
         }
